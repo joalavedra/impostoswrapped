@@ -82,11 +82,11 @@ function Fact({
 }) {
   return (
     <div className="rounded-xl bg-white/20 px-3 py-2.5 border border-white/25">
-      <div className="flex gap-2.5">
-        <span className="text-base leading-snug">{emoji}</span>
-        <span className="text-xs font-medium leading-snug">{text}</span>
+      <div className="flex items-start gap-2">
+        <span className="text-sm leading-5 w-4 flex-shrink-0 text-center">{emoji}</span>
+        <span className="flex-1 text-xs font-medium leading-5">{text}</span>
       </div>
-      <div className="mt-1.5 pl-7 text-base leading-none tracking-wide">{endEmojis}</div>
+      <div className="mt-2 pl-6 text-base leading-none tracking-[0.2em]">{endEmojis}</div>
     </div>
   )
 }

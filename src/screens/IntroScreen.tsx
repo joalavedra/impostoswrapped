@@ -23,12 +23,16 @@ export function IntroScreen() {
         </div>
       </motion.div>
       <motion.div
-        className="text-center text-xs font-semibold"
+        className="text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
       >
-        Toca aquí i anem fent →
+        <div className="mx-auto mb-3 flex max-w-[18rem] items-center justify-center gap-1.5 rounded-full border border-black/20 bg-white/60 px-3 py-1.5 text-[11px] font-medium">
+          <span aria-hidden>🔒</span>
+          <span>Les dades no surten del teu mòbil.</span>
+        </div>
+        <div className="text-xs font-semibold">Toca aquí i anem fent →</div>
       </motion.div>
     </ScreenBg>
   )
