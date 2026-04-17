@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { PhoneFrame } from './components/PhoneFrame'
 import { StoryProgress } from './components/StoryProgress'
 import { SwipeContainer } from './components/SwipeContainer'
@@ -46,6 +46,13 @@ function Wrapped() {
 
   const total = screens.length
   const clampedIndex = Math.min(index, total - 1)
+
+  useEffect(() => {
+    if (breakdown && index <= 1) {
+      setProgress(0)
+      setIndex(2)
+    }
+  }, [breakdown, index])
 
   const goNext = useCallback(() => {
     setProgress(0)
