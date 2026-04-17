@@ -52,7 +52,7 @@ export function FunnyFactsScreen() {
   ]
 
   return (
-    <ScreenBg variant="cream-waves">
+    <ScreenBg variant="dark-grid">
       <div className="text-[10px] uppercase tracking-widest font-semibold opacity-70">
         Totes les dades, juntes
       </div>
@@ -61,22 +61,24 @@ export function FunnyFactsScreen() {
       </h1>
 
       <div className="mt-3 flex-1 overflow-y-auto no-scrollbar">
-        <div className="divide-y divide-black/15 rounded-2xl border-2 border-black/80 bg-white/70">
+        <div className="divide-y divide-white/10 rounded-2xl border border-white/20 bg-white/[0.06] backdrop-blur-sm">
           {facts.map((f, i) => (
             <div key={i} className="flex gap-3 px-3 py-2.5">
               <span className="text-lg leading-5 w-6 flex-shrink-0 text-center">{f.emoji}</span>
               <div className="flex-1 min-w-0">
-                <div className="text-[10px] font-semibold uppercase tracking-widest opacity-70">
+                <div className="text-[10px] font-semibold uppercase tracking-widest opacity-60">
                   {f.label}
                 </div>
-                <div className="text-xs font-medium leading-snug mt-0.5">{f.detail}</div>
+                <div className="text-xs font-medium leading-snug mt-0.5 opacity-95">
+                  {f.detail}
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="mt-2 text-[10px] opacity-70">
+      <div className="mt-2 text-[10px] opacity-60">
         Tots els càlculs són sobre {eur(breakdown.totalTax)} d'impostos totals.
       </div>
     </ScreenBg>
