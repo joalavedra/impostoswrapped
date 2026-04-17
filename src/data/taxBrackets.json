@@ -3,7 +3,12 @@
   "source": "Agència Tributària (IRPF estatal) + Generalitat de Catalunya (tram autonòmic) + Seguretat Social 2026",
   "socialSecurityEmployeeRate": 0.0635,
   "socialSecurityMIEIRate": 0.0015,
-  "socialSecurityBaseMax": 61214,
+  "socialSecurityBaseMax": 61214.4,
+  "solidarity": [
+    { "from": 0, "rate": 0.0019 },
+    { "from": 6121.44, "rate": 0.0021 },
+    { "from": 30607.2, "rate": 0.0024 }
+  ],
   "earningsReductionBase": 7302,
   "earningsReductionMax": 6498,
   "earningsReductionMin": 2000,
