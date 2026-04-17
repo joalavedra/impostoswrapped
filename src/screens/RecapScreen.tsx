@@ -65,12 +65,12 @@ export function RecapScreen() {
         <div className="mt-3 rounded-2xl bg-black text-white p-4 shadow-xl border border-black/10 space-y-3">
           <div ref={cardRef} className="space-y-3">
             <div className="flex items-baseline justify-between">
-              <div className="font-display text-base font-bold">ImpostosWrapped</div>
+              <div className="font-display text-base font-bold">El meu Impost Wrapped</div>
               <div className="text-[10px] opacity-70">2025</div>
             </div>
             <div>
               <div className="text-[9px] uppercase tracking-widest opacity-60">
-                Total aportat
+                Total pagat
               </div>
               <div className="font-display text-3xl font-bold leading-none tabular-nums">
                 {eur(breakdown.totalTax)}
@@ -81,21 +81,20 @@ export function RecapScreen() {
             </div>
             <div className="h-px bg-white/15" />
             <Stat
-              label="Destí estrella"
+              label="Major cost"
               value={`${top.emoji} ${top.label}`}
               sub={`${eur(topYours)} hi has posat tu sol/a`}
             />
             <Stat
               label="Dèficit per persona"
               value={eur(stats.deficitPerCapita)}
-              sub="que tots devem una mica més"
+              sub="de diners que devem"
             />
             <Stat
-              label="En comparacions tontes"
+              label="En perspectiva"
               value={`${comp.emoji} ${num(comp.units)}`}
               sub={comp.label}
             />
-            <div className="text-[9px] opacity-60 pt-1">Dades: Generalitat + Idescat</div>
           </div>
 
           <div className="flex gap-2 pt-2">
@@ -107,7 +106,7 @@ export function RecapScreen() {
               }}
               className="flex-1 rounded-full border border-white/50 bg-white/10 text-white py-2 text-xs font-display font-bold active:scale-[0.98] transition"
             >
-              Un altre cop
+              Refer
             </button>
             <button
               type="button"

@@ -37,7 +37,7 @@ export function ContributionScreen() {
           value={<AnimatedNumber value={breakdown.regionalTax} format={(n) => eur(n)} />}
         />
         <Row
-          label="Net que et queda"
+          label="Salari net per tu"
           value={<AnimatedNumber value={breakdown.netAnnual} format={(n) => eur(n)} />}
           tone="soft"
         />
@@ -68,9 +68,8 @@ function Row({
 }) {
   return (
     <div
-      className={`flex items-baseline justify-between gap-3 rounded-xl border px-3 py-2 ${
-        tone === 'soft' ? 'border-white/40 bg-white/15' : 'border-white/20'
-      }`}
+      className={`flex items-baseline justify-between gap-3 rounded-xl border px-3 py-2 ${tone === 'soft' ? 'border-white/40 bg-white/15' : 'border-white/20'
+        }`}
     >
       <span className="text-xs font-semibold opacity-90 truncate">{label}</span>
       <span className="font-display text-base font-bold tabular-nums whitespace-nowrap">

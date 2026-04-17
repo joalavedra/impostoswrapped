@@ -23,7 +23,7 @@ export function DepartmentsScreen() {
         Despesa vs Inversió
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        Els teus diners: gastats o invertits?
+        Amb que inverteixes el teu sou?
       </h1>
 
       <div className="mt-4 grid grid-cols-2 gap-2">
