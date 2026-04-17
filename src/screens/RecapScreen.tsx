@@ -121,15 +121,15 @@ export function RecapScreen() {
 
         <div className="mt-auto grid grid-cols-2 gap-2 pt-3">
           <SponsorCta
-            headline="Save with Canigo"
+            headline="Estalvia amb Canigo"
             subcopy="Estalvia al 3% i no miris la nòmina"
-            cta="Save"
+            cta="Estalvia"
             tone="lime"
           />
           <SponsorCta
-            headline="Invest with Farao"
+            headline="Invierteix amb Farao"
             subcopy="Fes créixer el que et queda"
-            cta="Invest"
+            cta="Invierteix"
             tone="plum"
           />
         </div>

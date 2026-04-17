@@ -44,7 +44,7 @@ export function InterestScreen() {
       </div>
 
       <div className="mt-auto text-xs font-semibold opacity-80">
-        I com s'explica això? Ara t'ho enganxo…
+        I com es possible això? Ara t'ho explico
       </div>
     </ScreenBg>
   )
