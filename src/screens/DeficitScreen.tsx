@@ -1,4 +1,5 @@
 import { AnimatedNumber } from '../components/AnimatedNumber'
+import { ScreenBg } from '../components/ScreenBg'
 import { eur, num } from '../lib/format'
 import { pickComparison } from '../lib/compare'
 import stats from '../data/stats.json'
@@ -7,36 +8,42 @@ export function DeficitScreen() {
   const comp = pickComparison(stats.deficitPerCapita)
 
   return (
-    <div className="absolute inset-0 bg-gradient-to-br from-wrap-coral via-wrap-plum to-black text-white px-6 pt-16 pb-10 flex flex-col">
-      <div className="text-xs uppercase tracking-widest font-semibold opacity-80">
+    <ScreenBg variant="plum-stripes">
+      <div className="text-[10px] uppercase tracking-widest font-semibold opacity-80">
         Dèficit per càpita
       </div>
-      <h1 className="font-display text-3xl font-bold leading-tight mt-1">
+      <h1 className="font-display text-2xl font-bold leading-tight mt-1">
         Cada català deu una mica més aquest any
       </h1>
 
-      <div className="mt-10">
-        <div className="text-xs font-semibold opacity-70 uppercase tracking-widest">
+      <div className="mt-8">
+        <div className="text-[10px] font-semibold opacity-70 uppercase tracking-widest">
           per cada habitant
         </div>
-        <div className="font-display text-8xl font-bold leading-none">
+        <div className="font-display text-6xl font-bold leading-none tabular-nums">
           <AnimatedNumber value={stats.deficitPerCapita} format={(n) => eur(n)} />
         </div>
-        <div className="mt-2 text-sm opacity-85">
+        <div className="mt-2 text-xs opacity-85 leading-snug">
           és el que ha afegit la Generalitat al deute de cada català en {stats.year}.
         </div>
       </div>
 
-      <div className="mt-8 rounded-2xl bg-white/15 border border-white/20 p-4">
-        <div className="text-sm font-medium leading-snug">
-          Equival a uns <span className="font-bold">{num(comp.units)} {comp.label}</span>{' '}
+      <div className="mt-6 rounded-xl bg-white/20 border border-white/25 p-3">
+        <div className="text-xs font-medium leading-snug">
+          Equival a uns{' '}
+          <span className="font-bold tabular-nums">
+            {num(comp.units)} {comp.label}
+          </span>{' '}
           per cap.
         </div>
       </div>
 
-      <div className="mt-auto text-xs opacity-70">
-        Població Catalunya: {num(stats.population)} · Deute viu: {eur(stats.debtOutstanding * 1_000_000)}
+      <div className="mt-auto text-[10px] opacity-75 leading-snug">
+        Població: <span className="tabular-nums">{num(stats.population)}</span> · Deute viu:{' '}
+        <span className="tabular-nums whitespace-nowrap">
+          {eur(stats.debtOutstanding * 1_000_000)}
+        </span>
       </div>
-    </div>
+    </ScreenBg>
   )
 }

@@ -54,6 +54,13 @@ function Wrapped() {
     }
   }, [breakdown, index])
 
+  useEffect(() => {
+    if (!breakdown) {
+      setProgress(0)
+      setIndex(0)
+    }
+  }, [breakdown])
+
   const goNext = useCallback(() => {
     setProgress(0)
     setIndex((i) => Math.min(i + 1, total - 1))

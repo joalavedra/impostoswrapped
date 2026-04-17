@@ -1,4 +1,5 @@
 import { AnimatedNumber } from '../components/AnimatedNumber'
+import { ScreenBg } from '../components/ScreenBg'
 import { eur, pct } from '../lib/format'
 import { useWrapped } from '../state/WrappedContext'
 
@@ -7,15 +8,15 @@ export function ContributionScreen() {
   if (!breakdown) return null
 
   return (
-    <div className="absolute inset-0 bg-gradient-to-b from-wrap-coral to-wrap-plum text-white px-6 pt-16 pb-10 flex flex-col">
-      <div className="text-xs uppercase tracking-widest font-semibold opacity-80">
+    <ScreenBg variant="coral-dots">
+      <div className="text-[10px] uppercase tracking-widest font-semibold opacity-80">
         La nòmina per dins
       </div>
-      <h1 className="font-display text-3xl font-bold leading-tight mt-1">
+      <h1 className="font-display text-2xl font-bold leading-tight mt-1">
         D'on surt cada euro que aportes
       </h1>
 
-      <div className="mt-8 flex flex-col gap-4">
+      <div className="mt-5 flex flex-col gap-2">
         <Row label="Nòmina bruta" value={eur(breakdown.grossAnnual)} tone="soft" />
         <Row
           label="− Seguretat Social"
@@ -33,16 +34,16 @@ export function ContributionScreen() {
       </div>
 
       <div className="mt-auto">
-        <div className="text-sm font-semibold opacity-80">Taxa efectiva</div>
-        <div className="font-display text-7xl font-bold leading-none">
+        <div className="text-xs font-semibold opacity-80">Taxa efectiva</div>
+        <div className="font-display text-6xl font-bold leading-none tabular-nums">
           <AnimatedNumber value={breakdown.effectiveRate} format={(n) => pct(n)} />
         </div>
-        <div className="mt-2 text-sm opacity-80">
-          De cada 100 € que guanyes, l'Estat se'n queda{' '}
+        <div className="mt-2 text-xs opacity-80 leading-snug">
+          De cada 100 € que guanyes, se'n queden{' '}
           <span className="font-bold">{pct(breakdown.effectiveRate)}</span>.
         </div>
       </div>
-    </div>
+    </ScreenBg>
   )
 }
 
@@ -57,12 +58,14 @@ function Row({
 }) {
   return (
     <div
-      className={`flex items-baseline justify-between rounded-2xl border ${
-        tone === 'soft' ? 'border-white/40 bg-white/10' : 'border-white/20'
-      } px-4 py-3`}
+      className={`flex items-baseline justify-between gap-3 rounded-xl border px-3 py-2 ${
+        tone === 'soft' ? 'border-white/40 bg-white/15' : 'border-white/20'
+      }`}
     >
-      <span className="text-sm font-semibold opacity-90">{label}</span>
-      <span className="font-display text-xl font-bold">{value}</span>
+      <span className="text-xs font-semibold opacity-90 truncate">{label}</span>
+      <span className="font-display text-base font-bold tabular-nums whitespace-nowrap">
+        {value}
+      </span>
     </div>
   )
 }

@@ -1,4 +1,5 @@
 import { AnimatedNumber } from '../components/AnimatedNumber'
+import { ScreenBg, type BgVariant } from '../components/ScreenBg'
 import { eur, num, pct } from '../lib/format'
 import { categoryContribution } from '../lib/tax'
 import { pickComparison } from '../lib/compare'
@@ -15,12 +16,12 @@ interface Category {
   unitCostEur: number
 }
 
-const palette = [
-  'from-wrap-coral to-wrap-plum',
-  'from-wrap-sun to-wrap-coral',
-  'from-wrap-blue to-wrap-plum',
-  'from-wrap-lime to-wrap-blue',
-  'from-wrap-pink to-wrap-plum',
+const VARIANTS: BgVariant[] = [
+  'plum-stripes',
+  'lime-dots',
+  'coral-dots',
+  'plum-grid',
+  'lime-stripes',
 ]
 
 export function CategoryScreen({ category, rank }: { category: Category; rank: number }) {
@@ -32,49 +33,44 @@ export function CategoryScreen({ category, rank }: { category: Category; rank: n
   const units = yours / category.unitCostEur
   const funnyStat = category.stat.replace('{units}', num(units))
   const generic = pickComparison(yours)
-  const gradient = palette[(rank - 1) % palette.length]
+  const variant = VARIANTS[(rank - 1) % VARIANTS.length]
 
   return (
-    <div
-      className={`absolute inset-0 bg-gradient-to-br ${gradient} text-white px-6 pt-16 pb-10 flex flex-col`}
-    >
-      <div className="flex items-center gap-2 text-xs uppercase tracking-widest font-semibold opacity-90">
-        <span className="rounded-full bg-white/20 px-2 py-0.5">#{rank}</span>
-        <span>Aportació específica</span>
+    <ScreenBg variant={variant}>
+      <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold">
+        <span className="rounded-full bg-white/25 px-2 py-0.5">#{rank}</span>
+        <span className="opacity-90">Aportació específica</span>
       </div>
 
-      <div className="mt-6 text-6xl">{category.emoji}</div>
-      <h1 className="font-display text-4xl font-bold leading-tight mt-2">{category.label}</h1>
-      <div className="text-sm opacity-85 mt-1">{category.oneLiner}</div>
+      <div className="mt-4 text-5xl leading-none">{category.emoji}</div>
+      <h1 className="font-display text-3xl font-bold leading-tight mt-2">{category.label}</h1>
+      <div className="text-xs opacity-85 mt-1">{category.oneLiner}</div>
 
-      <div className="mt-8">
-        <div className="text-xs font-semibold opacity-80 uppercase tracking-widest">
+      <div className="mt-5">
+        <div className="text-[10px] font-semibold opacity-80 uppercase tracking-widest">
           hi has posat
         </div>
-        <div className="font-display text-7xl font-bold leading-none">
+        <div className="font-display text-6xl font-bold leading-none tabular-nums">
           <AnimatedNumber value={yours} format={(n) => eur(n)} />
         </div>
-        <div className="mt-1 text-sm font-semibold opacity-90">
+        <div className="mt-1 text-xs font-semibold opacity-90">
           {pct(shareOfTotal)} del total dels teus impostos
         </div>
       </div>
 
-      <div className="mt-auto space-y-3">
+      <div className="mt-auto space-y-2">
         <Fact emoji="💡" text={funnyStat} />
-        <Fact
-          emoji="🧾"
-          text={`O també: uns ${num(generic.units)} ${generic.label}.`}
-        />
+        <Fact emoji="🧾" text={`O també: uns ${num(generic.units)} ${generic.label}.`} />
       </div>
-    </div>
+    </ScreenBg>
   )
 }
 
 function Fact({ emoji, text }: { emoji: string; text: string }) {
   return (
-    <div className="flex gap-3 rounded-2xl bg-white/15 px-4 py-3 border border-white/20">
-      <span className="text-xl">{emoji}</span>
-      <span className="text-sm font-medium leading-snug">{text}</span>
+    <div className="flex gap-2.5 rounded-xl bg-white/20 px-3 py-2.5 border border-white/25">
+      <span className="text-base">{emoji}</span>
+      <span className="text-xs font-medium leading-snug">{text}</span>
     </div>
   )
 }
