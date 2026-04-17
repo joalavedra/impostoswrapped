@@ -1,0 +1,13 @@
+{
+  "units": [
+    { "key": "menu_dia", "label": "menús del dia", "eur": 14 },
+    { "key": "tusual", "label": "T-usuals de metro", "eur": 42.35 },
+    { "key": "cafes", "label": "cafès al bar", "eur": 1.5 },
+    { "key": "lloguer_bcn", "label": "mesos de lloguer a Barcelona", "eur": 1100 },
+    { "key": "cistella", "label": "cistelles de la compra setmanal", "eur": 95 },
+    { "key": "cervesa", "label": "canyes a la terrassa", "eur": 3 },
+    { "key": "pa_cupcake", "label": "cupcakes de forn de barri", "eur": 2.8 },
+    { "key": "entrada_camp", "label": "entrades al Camp Nou", "eur": 75 },
+    { "key": "truck_5e", "label": "camions de 5 € en efectiu", "eur": 180000 }
+  ]
+}

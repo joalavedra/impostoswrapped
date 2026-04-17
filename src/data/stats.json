@@ -1,0 +1,16 @@
+{
+  "year": 2024,
+  "source": "Idescat + Generalitat 2024",
+  "population": 7901963,
+  "taxpayers": 3680000,
+  "medianGrossSalary": 27750,
+  "p25GrossSalary": 17800,
+  "p75GrossSalary": 40200,
+  "p90GrossSalary": 60500,
+  "p99GrossSalary": 135000,
+  "revenue": 39450,
+  "spending": 43673,
+  "deficit": 4223,
+  "deficitPerCapita": 534,
+  "debtOutstanding": 87400
+}

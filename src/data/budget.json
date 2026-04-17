@@ -1,0 +1,20 @@
+{
+  "year": 2024,
+  "currency": "EUR",
+  "unit": "millions",
+  "source": "Pressupostos Generalitat de Catalunya 2024 (Llei 6/2024) - agregats per àrea de despesa",
+  "total": 43673,
+  "departments": [
+    { "key": "salut", "label": "Salut", "amount": 12850, "color": "#ff5a5f" },
+    { "key": "educacio", "label": "Educació i Universitats", "amount": 8690, "color": "#ffc94d" },
+    { "key": "drets_socials", "label": "Drets Socials i Pensions", "amount": 4120, "color": "#c9ff4d" },
+    { "key": "interior", "label": "Interior (Mossos, bombers)", "amount": 1680, "color": "#4d7cff" },
+    { "key": "territori", "label": "Territori i Transport", "amount": 2627, "color": "#ff7ac6" },
+    { "key": "accio_climatica", "label": "Acció Climàtica (sequera, aigua)", "amount": 1385, "color": "#6b2dd1" },
+    { "key": "recerca", "label": "Recerca i Universitats", "amount": 1001, "color": "#8ef0ff" },
+    { "key": "cultura", "label": "Cultura i llengua", "amount": 520, "color": "#ff9e3d" },
+    { "key": "justicia", "label": "Justícia", "amount": 680, "color": "#b6ff9a" },
+    { "key": "interessos_deute", "label": "Interessos del deute", "amount": 1372, "color": "#9aa0a6" },
+    { "key": "altres", "label": "Altres (govern, admin, etc.)", "amount": 8748, "color": "#d4d4d4" }
+  ]
+}

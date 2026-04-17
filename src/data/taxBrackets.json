@@ -1,0 +1,32 @@
+{
+  "year": 2024,
+  "source": "Agència Tributària + Generalitat de Catalunya (Llei 24/2010 i Llei 5/2020)",
+  "socialSecurityEmployeeRate": 0.0635,
+  "socialSecurityMIEIRate": 0.007,
+  "socialSecurityBaseMax": 58908,
+  "earningsReductionBase": 7302,
+  "earningsReductionMax": 6498,
+  "earningsReductionMin": 2000,
+  "personalMinimum": 5550,
+  "spouseMinimum": 3400,
+  "childMinimums": [2400, 2700, 4000, 4500],
+  "state": [
+    { "from": 0, "rate": 0.095 },
+    { "from": 12450, "rate": 0.12 },
+    { "from": 20200, "rate": 0.15 },
+    { "from": 35200, "rate": 0.185 },
+    { "from": 60000, "rate": 0.225 },
+    { "from": 300000, "rate": 0.245 }
+  ],
+  "catalonia": [
+    { "from": 0, "rate": 0.105 },
+    { "from": 12450, "rate": 0.12 },
+    { "from": 17707.2, "rate": 0.14 },
+    { "from": 21000, "rate": 0.15 },
+    { "from": 33007.2, "rate": 0.188 },
+    { "from": 53407.2, "rate": 0.215 },
+    { "from": 90000, "rate": 0.235 },
+    { "from": 120000, "rate": 0.245 },
+    { "from": 175000, "rate": 0.255 }
+  ]
+}

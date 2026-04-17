@@ -1,0 +1,55 @@
+{
+  "note": "Top-5 partides específiques amb què es munten els category screens. Els valors són la despesa total estimada de la Generalitat; el càlcul per-usuari es fa com (amount_total / budget_total) * tax_usuari.",
+  "categories": [
+    {
+      "key": "hospitals",
+      "label": "Hospitals públics",
+      "emoji": "🏥",
+      "department": "salut",
+      "amount": 8900,
+      "oneLiner": "ICS, hospitals concertats i primària",
+      "stat": "Amb els diners que hi has posat es paguen {units} hores de consulta al CAP.",
+      "unitCostEur": 42
+    },
+    {
+      "key": "escoles",
+      "label": "Escoles i instituts",
+      "emoji": "🎒",
+      "department": "educacio",
+      "amount": 6100,
+      "oneLiner": "Professorat, menjador i manteniment",
+      "stat": "Has pagat {units} dies de cole per un nen de primària.",
+      "unitCostEur": 28
+    },
+    {
+      "key": "pensions_dependencia",
+      "label": "Pensions i dependència",
+      "emoji": "👵",
+      "department": "drets_socials",
+      "amount": 3400,
+      "oneLiner": "Renda garantida, llei de dependència i residències",
+      "stat": "Equival a {units} dies de residència geriàtrica.",
+      "unitCostEur": 65
+    },
+    {
+      "key": "mossos",
+      "label": "Mossos d'Esquadra",
+      "emoji": "🚓",
+      "department": "interior",
+      "amount": 1250,
+      "oneLiner": "Sou, patrulles i comissaries",
+      "stat": "Has pagat {units} minuts de patrulla de 2 agents.",
+      "unitCostEur": 0.7
+    },
+    {
+      "key": "transport",
+      "label": "Transport públic",
+      "emoji": "🚇",
+      "department": "territori",
+      "amount": 2120,
+      "oneLiner": "TMB, FGC i Rodalies",
+      "stat": "Són {units} bitllets de T-usual mensual.",
+      "unitCostEur": 42.35
+    }
+  ]
+}
