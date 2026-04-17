@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "opendata-cat": {
+      "command": "npx",
+      "args": ["-y", "@opendata.cat/mcp-server"]
+    }
+  }
+}
