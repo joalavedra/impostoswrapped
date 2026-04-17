@@ -4,6 +4,7 @@ import { eur, num, pct } from '../lib/format'
 import { categoryContribution } from '../lib/tax'
 import { pickComparison } from '../lib/compare'
 import { useWrapped } from '../state/WrappedContext'
+import budget from '../data/budget.json'
 
 interface Category {
   key: string
@@ -35,12 +36,20 @@ export function CategoryScreen({ category, rank }: { category: Category; rank: n
   const funnyStat = category.stat.replace('{units}', num(units))
   const generic = pickComparison(yours)
   const variant = VARIANTS[(rank - 1) % VARIANTS.length]
+  const dept = budget.departments.find((d) => d.key === category.department)
+  const type = (dept as { type?: 'expense' | 'investment' } | undefined)?.type ?? 'expense'
+  const isInvestment = type === 'investment'
 
   return (
     <ScreenBg variant={variant}>
       <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest font-semibold">
-        <span className="rounded-full bg-white/25 px-2 py-0.5">#{rank}</span>
-        <span className="opacity-90">Destí estrella</span>
+        <span
+          className={`rounded-full px-2 py-0.5 font-bold ${
+            isInvestment ? 'bg-wrap-lime text-black' : 'bg-black/80 text-white'
+          }`}
+        >
+          {isInvestment ? '🌱 Inversió' : '🔥 Despesa'}
+        </span>
       </div>
 
       <div className="mt-4 text-5xl leading-none">{category.emoji}</div>
