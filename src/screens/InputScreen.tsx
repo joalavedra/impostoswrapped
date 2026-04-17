@@ -2,16 +2,31 @@ import { useState } from 'react'
 import { ScreenBg } from '../components/ScreenBg'
 import { useWrapped } from '../state/WrappedContext'
 
+const groupFmt = new Intl.NumberFormat('ca-ES', { maximumFractionDigits: 0 })
+
+function formatGross(v: string): string {
+  const digits = v.replace(/\D/g, '')
+  if (!digits) return ''
+  return groupFmt.format(Number(digits))
+}
+
+function parseGross(v: string): number {
+  const digits = v.replace(/\D/g, '')
+  return digits ? Number(digits) : 0
+}
+
 export function InputScreen() {
   const { setInputs, inputs } = useWrapped()
-  const [gross, setGross] = useState<string>(inputs ? String(inputs.grossAnnual) : '30000')
+  const [gross, setGross] = useState<string>(
+    inputs ? groupFmt.format(inputs.grossAnnual) : groupFmt.format(30000),
+  )
   const [status, setStatus] = useState<'single' | 'couple'>(inputs?.status ?? 'single')
   const [dependents, setDependents] = useState<number>(inputs?.dependents ?? 0)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    const n = Number(gross)
+    const n = parseGross(gross)
     if (!Number.isFinite(n) || n <= 0) return
     setInputs({ grossAnnual: n, status, dependents })
   }
@@ -40,12 +55,12 @@ export function InputScreen() {
           <label className="flex flex-col gap-1.5">
             <span className="text-xs font-semibold">Quant guanyes brut a l'any? (€)</span>
             <input
-              type="number"
+              type="text"
               inputMode="numeric"
               value={gross}
-              onChange={(e) => setGross(e.target.value)}
+              onChange={(e) => setGross(formatGross(e.target.value))}
               className="min-w-0 rounded-2xl border-2 border-black/90 bg-white px-4 py-3 font-display text-xl font-bold tabular-nums focus:outline-none focus:ring-4 focus:ring-wrap-coral/40"
-              placeholder="30000"
+              placeholder="30.000"
             />
           </label>
 

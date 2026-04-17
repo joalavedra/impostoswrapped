@@ -1,4 +1,3 @@
-import { AnimatedNumber } from '../components/AnimatedNumber'
 import { ScreenBg } from '../components/ScreenBg'
 import { eur } from '../lib/format'
 import { useWrapped } from '../state/WrappedContext'
@@ -25,18 +24,36 @@ function percentile(gross: number): number {
   return 99.9
 }
 
-function tier(p: number): { label: string; tone: string } {
-  if (p < 33) return { label: 'Part baixa', tone: 'al terç que menys cobra' }
-  if (p < 66) return { label: 'Classe mitja', tone: 'al terç del mig, com la majoria' }
-  if (p < 90) return { label: 'Top 25%', tone: 'al quart de dalt de tot' }
-  return { label: 'Top 10%', tone: "entre els qui més cobren de Catalunya" }
+function positionLabel(p: number): { headline: string; rank: string; tone: string } {
+  if (p >= 50) {
+    const top = Math.max(1, Math.round(100 - p))
+    return {
+      headline: `Top ${top}%`,
+      rank: `Top ${top}%`,
+      tone:
+        top <= 10
+          ? "entre els qui més cobren de Catalunya"
+          : top <= 25
+            ? 'al quart de dalt de tot'
+            : 'a la meitat que més cobra',
+    }
+  }
+  const bottom = Math.max(1, Math.round(p))
+  return {
+    headline: `Bottom ${bottom}%`,
+    rank: `Bottom ${bottom}%`,
+    tone:
+      bottom <= 25
+        ? 'al quart que menys cobra'
+        : 'a la meitat que menys cobra',
+  }
 }
 
 export function PositionScreen() {
   const { breakdown } = useWrapped()
   if (!breakdown) return null
   const p = percentile(breakdown.grossAnnual)
-  const t = tier(p)
+  const t = positionLabel(p)
 
   const buckets: { label: string; weight: number }[] = [
     { label: '<17k', weight: 25 },
@@ -66,12 +83,12 @@ export function PositionScreen() {
         La teva posició
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        Estàs a la <span className="text-wrap-lime">{t.label}</span>
+        Estàs al <span className="text-wrap-lime">{t.headline}</span>
       </h1>
 
       <div className="mt-5">
         <div className="font-display text-5xl font-bold leading-none tabular-nums">
-          <AnimatedNumber value={p} format={(n) => `P${n.toFixed(0)}`} />
+          {t.rank}
         </div>
         <div className="mt-1.5 text-xs opacity-85 leading-snug">
           Et trobes {t.tone} (guanyes{' '}

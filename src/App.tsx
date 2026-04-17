@@ -13,6 +13,7 @@ import { CategoryScreen } from './screens/CategoryScreen'
 import { InterestScreen } from './screens/InterestScreen'
 import { RevenueVsSpendScreen } from './screens/RevenueVsSpendScreen'
 import { DeficitScreen } from './screens/DeficitScreen'
+import { FunnyFactsScreen } from './screens/FunnyFactsScreen'
 import { RecapScreen } from './screens/RecapScreen'
 import spending from './data/spending.json'
 
@@ -40,6 +41,7 @@ function Wrapped() {
       { key: 'interest', node: <InterestScreen /> },
       { key: 'revspend', node: <RevenueVsSpendScreen /> },
       { key: 'deficit', node: <DeficitScreen /> },
+      { key: 'funny-facts', node: <FunnyFactsScreen /> },
       { key: 'recap', node: <RecapScreen /> },
     ]
   }, [breakdown])

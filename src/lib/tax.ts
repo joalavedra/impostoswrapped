@@ -11,12 +11,20 @@ export interface TaxBreakdown {
   grossAnnual: number
   socialSecurity: number
   solidarity: number
+  stateTax: number
+  regionalTax: number
   incomeTax: number
   totalTax: number
   netAnnual: number
   effectiveRate: number
   payrollDeductions: number
-  departmentAllocation: { key: string; label: string; amount: number; color: string }[]
+  departmentAllocation: {
+    key: string
+    label: string
+    amount: number
+    color: string
+    type: 'expense' | 'investment'
+  }[]
 }
 
 function applyBrackets(base: number, table: { from: number; rate: number }[]): number {
@@ -89,13 +97,16 @@ export function computeTax(inputs: TaxInputs): TaxBreakdown {
     key: d.key,
     label: d.label,
     color: d.color,
-    amount: (d.amount / budget.total) * incomeTax,
+    type: (d as { type?: 'expense' | 'investment' }).type ?? 'expense',
+    amount: (d.amount / budget.total) * totalTax,
   }))
 
   return {
     grossAnnual: gross,
     socialSecurity,
     solidarity,
+    stateTax,
+    regionalTax: catTax,
     incomeTax,
     totalTax,
     netAnnual,
