@@ -15,11 +15,11 @@ export function IntroScreen() {
           <br />
           Wrapped
         </div>
-        <div className="mt-3 text-lg font-display font-semibold">2024 · Catalunya</div>
+        <div className="mt-3 text-lg font-display font-semibold">2025 · Catalunya</div>
         <div className="mx-auto mt-8 max-w-[16rem] text-sm font-medium leading-snug">
-          On han anat els teus impostos aquest any?
+          On s'han esfumat els teus impostos enguany?
           <br />
-          <span className="opacity-60">T'ho expliquem en 60 segons.</span>
+          <span className="opacity-60">Deixa'ns un minut i t'ho expliquem.</span>
         </div>
       </motion.div>
       <motion.div
@@ -28,7 +28,7 @@ export function IntroScreen() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
       >
-        Toca per començar →
+        Toca aquí i anem fent →
       </motion.div>
     </ScreenBg>
   )

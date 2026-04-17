@@ -13,10 +13,10 @@ export function DepartmentsScreen() {
   return (
     <ScreenBg variant="coral-grid">
       <div className="text-[10px] uppercase tracking-widest font-semibold opacity-80">
-        On van els teus IRPF
+        A on van a parar els teus IRPF
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        El teu pressupost, en una piruleta
+        El teu pressupost, com una piruleta
       </h1>
 
       <div className="relative mx-auto mt-3 h-40 w-40">
@@ -59,7 +59,7 @@ export function DepartmentsScreen() {
       </div>
 
       <div className="mt-1 text-[9px] opacity-80">
-        Pressupost Generalitat {budget.year} · proporcions aplicades al teu IRPF
+        Pressupost Generalitat {budget.year} · proporcions aplicades al teu IRPF 🥧
       </div>
     </ScreenBg>
   )

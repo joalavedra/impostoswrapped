@@ -26,10 +26,10 @@ function percentile(gross: number): number {
 }
 
 function tier(p: number): { label: string; tone: string } {
-  if (p < 33) return { label: 'Bottom', tone: 'del terç baix' }
-  if (p < 66) return { label: 'Middle', tone: 'del terç mitjà' }
-  if (p < 90) return { label: 'Top 25%', tone: 'del quart superior' }
-  return { label: 'Top 10%', tone: "entre l'elit catalana" }
+  if (p < 33) return { label: 'Part baixa', tone: 'al terç que menys cobra' }
+  if (p < 66) return { label: 'Classe mitja', tone: 'al terç del mig, com la majoria' }
+  if (p < 90) return { label: 'Top 25%', tone: 'al quart de dalt de tot' }
+  return { label: 'Top 10%', tone: "entre els qui més cobren de Catalunya" }
 }
 
 export function PositionScreen() {
@@ -63,10 +63,10 @@ export function PositionScreen() {
   return (
     <ScreenBg variant="plum-grid">
       <div className="text-[10px] uppercase tracking-widest font-semibold opacity-80">
-        On et situes
+        La teva posició
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        Els teus veïns <span className="text-wrap-lime">{t.label}</span>
+        Estàs a la <span className="text-wrap-lime">{t.label}</span>
       </h1>
 
       <div className="mt-5">
@@ -74,8 +74,8 @@ export function PositionScreen() {
           <AnimatedNumber value={p} format={(n) => `P${n.toFixed(0)}`} />
         </div>
         <div className="mt-1.5 text-xs opacity-85 leading-snug">
-          Estàs {t.tone} dels contribuents catalans (brut{' '}
-          <span className="font-bold tabular-nums">{eur(breakdown.grossAnnual)}</span>).
+          Et trobes {t.tone} (guanyes{' '}
+          <span className="font-bold tabular-nums">{eur(breakdown.grossAnnual)}</span> brut).
         </div>
       </div>
 

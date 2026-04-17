@@ -11,10 +11,10 @@ export function RevenueVsSpendScreen() {
   return (
     <ScreenBg variant="coral-grid">
       <div className="text-[10px] uppercase tracking-widest font-semibold opacity-80">
-        Ingressos vs despeses
+        Caixa vs butxaca
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        La Generalitat gasta més del que ingressa
+        La Generalitat gasta més del que entra a caixa
       </h1>
 
       <div className="mt-6 space-y-4">
@@ -30,7 +30,7 @@ export function RevenueVsSpendScreen() {
           −<AnimatedNumber value={stats.deficit * 1_000_000} format={(n) => eur(n)} />
         </div>
         <div className="mt-1 text-xs opacity-90 leading-snug">
-          El dèficit de {stats.year}. Es tapa emetent més deute.
+          El forat del {stats.year}. Es tapa emetent més deute. 📉
         </div>
       </div>
 

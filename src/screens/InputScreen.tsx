@@ -29,16 +29,16 @@ export function InputScreen() {
       >
         <div>
           <div className="text-[10px] uppercase tracking-widest font-semibold opacity-60">
-            Abans de començar
+            Quatre coses i comencem
           </div>
           <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-            Explica'ns una mica de tu
+            Parla'ns una mica de tu
           </h1>
         </div>
 
         <form onSubmit={handleSubmit} className="flex flex-1 flex-col gap-4 mt-6">
           <label className="flex flex-col gap-1.5">
-            <span className="text-xs font-semibold">Salari brut anual (€)</span>
+            <span className="text-xs font-semibold">Quant guanyes brut a l'any? (€)</span>
             <input
               type="number"
               inputMode="numeric"
@@ -50,7 +50,7 @@ export function InputScreen() {
           </label>
 
           <div className="flex flex-col gap-1.5">
-            <span className="text-xs font-semibold">Situació familiar</span>
+            <span className="text-xs font-semibold">Com ho fas?</span>
             <div className="grid grid-cols-2 gap-2">
               {(['single', 'couple'] as const).map((s) => (
                 <button
@@ -61,14 +61,14 @@ export function InputScreen() {
                     status === s ? 'bg-black text-white' : 'bg-white text-black'
                   }`}
                 >
-                  {s === 'single' ? 'Sol/a' : 'Parella'}
+                  {s === 'single' ? 'Sol/a' : 'En parella'}
                 </button>
               ))}
             </div>
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <span className="text-xs font-semibold">Fills / dependents</span>
+            <span className="text-xs font-semibold">Fills o gent a càrrec</span>
             <div className="flex items-center justify-between rounded-2xl border-2 border-black/90 bg-white px-3 py-2">
               <button
                 type="button"
@@ -94,7 +94,7 @@ export function InputScreen() {
             type="submit"
             className="mt-auto rounded-full bg-black text-white py-3.5 text-base font-display font-bold active:scale-[0.98] transition"
           >
-            Ensenya'm el Wrapped →
+            Dona'm el meu Wrapped →
           </button>
         </form>
       </div>

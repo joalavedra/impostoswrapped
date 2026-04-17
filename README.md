@@ -48,8 +48,8 @@ All datasets ship as JSON, so the app is fully static:
 
 | File | What | Source |
 |---|---|---|
-| `taxBrackets.json` | 2024 IRPF brackets (state + Catalan), SS rates, personal/family minimums | BOE + DOGC (Llei 24/2010, Llei 5/2020) |
-| `budget.json` | Generalitat 2024 budget by department area | Pressupostos Generalitat (Llei 6/2024) |
+| `taxBrackets.json` | 2025 IRPF brackets (state + Catalan), SS rates, personal/family minimums | BOE + DOGC (Llei 24/2010, Llei 5/2020) |
+| `budget.json` | Generalitat 2025 budget by department area | Pressupostos Generalitat (Llei 6/2025) |
 | `spending.json` | Top-5 specific programmes used for the category screens | Generalitat budget + curated unit costs |
 | `stats.json` | Population, revenue, spending, deficit per capita, outstanding debt | Idescat + Generalitat |
 | `comparisons.json` | Quirky comparison units (T-usual, menú del dia, …) | Curated |

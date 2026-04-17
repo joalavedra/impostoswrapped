@@ -16,18 +16,18 @@ export function InterestScreen() {
   return (
     <ScreenBg variant="dark-grid">
       <div className="text-[10px] uppercase tracking-widest font-semibold opacity-70">
-        I ara, la part amarga
+        I ara, la part lletja
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        Interessos del deute
+        Interessos del deute 💸
       </h1>
 
       <div className="mt-2 text-xs opacity-80 leading-snug">
-        Cada any, la Generalitat paga{' '}
+        Cada any, la Generalitat crema{' '}
         <span className="font-bold tabular-nums whitespace-nowrap">
           {eur(interestDept.amount * 1_000_000)}
         </span>{' '}
-        només en interessos ({eur(stats.debtOutstanding * 1_000_000)} de deute viu).
+        només per pagar interessos ({eur(stats.debtOutstanding * 1_000_000)} de deute pendent).
       </div>
 
       <div className="mt-8">
@@ -39,12 +39,12 @@ export function InterestScreen() {
         </div>
         <div className="mt-2 text-xs opacity-80 leading-snug">
           {pct(share)} dels teus impostos han anat a pagar{' '}
-          <span className="font-semibold">interessos</span>, no serveis.
+          <span className="font-semibold">interessos</span>, no pas serveis.
         </div>
       </div>
 
       <div className="mt-auto text-xs font-semibold opacity-80">
-        Parlem un moment de per què passa això…
+        I com s'explica això? Ara t'ho enganxo…
       </div>
     </ScreenBg>
   )

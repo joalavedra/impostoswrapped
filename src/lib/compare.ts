@@ -3,6 +3,19 @@ import comparisons from '../data/comparisons.json'
 export interface Comparison {
   units: number
   label: string
+  emoji: string
+}
+
+const EMOJIS: Record<string, string> = {
+  menu_dia: '🍽️',
+  tusual: '🎫',
+  cafes: '☕',
+  lloguer_bcn: '🏠',
+  cistella: '🛒',
+  cervesa: '🍺',
+  pa_cupcake: '🧁',
+  entrada_camp: '⚽',
+  truck_5e: '🚚',
 }
 
 export function pickComparison(amountEur: number): Comparison {
@@ -15,5 +28,9 @@ export function pickComparison(amountEur: number): Comparison {
     })
     .sort((a, b) => a.score - b.score)
   const pick = scored[0]
-  return { units: pick.units, label: pick.u.label }
+  return {
+    units: pick.units,
+    label: pick.u.label,
+    emoji: EMOJIS[pick.u.key] ?? '✨',
+  }
 }

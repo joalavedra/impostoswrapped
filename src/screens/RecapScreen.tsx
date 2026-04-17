@@ -19,11 +19,11 @@ export function RecapScreen() {
       const dataUrl = await toPng(cardRef.current, { cacheBust: true, pixelRatio: 2 })
       if (navigator.share && navigator.canShare) {
         const blob = await (await fetch(dataUrl)).blob()
-        const file = new File([blob], 'impostos-wrapped-2024.png', { type: 'image/png' })
+        const file = new File([blob], 'impostos-wrapped-2025.png', { type: 'image/png' })
         if (navigator.canShare({ files: [file] })) {
           await navigator.share({
             files: [file],
-            title: 'El meu ImpostosWrapped 2024',
+            title: 'El meu ImpostosWrapped 2025',
             text: 'Mira on han anat els meus impostos aquest any.',
           })
           return
@@ -31,7 +31,7 @@ export function RecapScreen() {
       }
       const a = document.createElement('a')
       a.href = dataUrl
-      a.download = 'impostos-wrapped-2024.png'
+      a.download = 'impostos-wrapped-2025.png'
       a.click()
     } catch (err) {
       console.error(err)
@@ -59,7 +59,7 @@ export function RecapScreen() {
           Resum final
         </div>
         <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-          El teu 2024, aportat
+          El teu 2025, aportat 🧾
         </h1>
 
         <div
@@ -68,7 +68,7 @@ export function RecapScreen() {
         >
           <div className="flex items-baseline justify-between">
             <div className="font-display text-base font-bold">ImpostosWrapped</div>
-            <div className="text-[10px] opacity-70">2024</div>
+            <div className="text-[10px] opacity-70">2025</div>
           </div>
           <div>
             <div className="text-[9px] uppercase tracking-widest opacity-60">Total aportat</div>
@@ -76,23 +76,23 @@ export function RecapScreen() {
               {eur(breakdown.totalTax)}
             </div>
             <div className="text-[11px] opacity-75 mt-1">
-              Taxa efectiva {pct(breakdown.effectiveRate)}
+              Tipus efectiu {pct(breakdown.effectiveRate)}
             </div>
           </div>
           <div className="h-px bg-white/15" />
           <Stat
-            label="#1 destinació"
+            label="Destí estrella"
             value={`${top.emoji} ${top.label}`}
-            sub={`${eur(topYours)} aportats`}
+            sub={`${eur(topYours)} hi has posat tu sol/a`}
           />
           <Stat
-            label="Dèficit per càpita"
+            label="Dèficit per persona"
             value={eur(stats.deficitPerCapita)}
-            sub="afegits al deute per català"
+            sub="que tots devem una mica més"
           />
           <Stat
-            label="Comparació divertida"
-            value={`${num(comp.units)}`}
+            label="En comparacions tontes"
+            value={`${comp.emoji} ${num(comp.units)}`}
             sub={comp.label}
           />
           <div className="text-[9px] opacity-60 pt-1">Dades: Generalitat + Idescat</div>
@@ -107,7 +107,7 @@ export function RecapScreen() {
             }}
             className="flex-1 rounded-full bg-white/70 backdrop-blur text-black py-2.5 text-sm font-display font-bold active:scale-[0.98] transition"
           >
-            Torna-ho a fer
+            Un altre cop
           </button>
           <button
             type="button"

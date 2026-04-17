@@ -14,10 +14,10 @@ export function EverydayScreen() {
   return (
     <ScreenBg variant="lime-stripes">
       <div className="text-[10px] uppercase tracking-widest font-semibold opacity-70">
-        El teu dia a dia
+        El compte del dia a dia
       </div>
       <h1 className="font-display text-2xl font-bold leading-tight mt-1">
-        Cada dia contribueixes amb…
+        Cada dia hi poses…
       </h1>
 
       <div className="mt-6 flex flex-col gap-5">
@@ -36,7 +36,7 @@ export function EverydayScreen() {
       </div>
 
       <div className="mt-auto text-xs font-semibold opacity-80 leading-snug">
-        Fent 8 h al dia, de 9 a 11 h treballes pels impostos. La resta, per tu.
+        Fent 8 h al dia, fins a les 11 del matí treballes per a Hisenda. La resta del dia, ja és per a tu.
       </div>
     </ScreenBg>
   )
