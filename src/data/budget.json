@@ -1,0 +1,20 @@
+{
+  "year": 2025,
+  "currency": "EUR",
+  "unit": "millions",
+  "source": "Pressupost vigent Generalitat 2025 (pròrroga del 2023 amb actualitzacions) — agregats per àrea de despesa",
+  "total": 44520,
+  "departments": [
+    { "key": "salut", "label": "Salut", "amount": 13120, "color": "#ff5a5f" },
+    { "key": "educacio", "label": "Educació i Universitats", "amount": 8860, "color": "#ffc94d" },
+    { "key": "drets_socials", "label": "Drets Socials i Pensions", "amount": 4210, "color": "#c9ff4d" },
+    { "key": "interior", "label": "Interior (Mossos, bombers)", "amount": 1720, "color": "#4d7cff" },
+    { "key": "territori", "label": "Territori i Transport", "amount": 2695, "color": "#ff7ac6" },
+    { "key": "accio_climatica", "label": "Acció Climàtica (sequera, aigua)", "amount": 1420, "color": "#6b2dd1" },
+    { "key": "recerca", "label": "Recerca i Universitats", "amount": 1045, "color": "#8ef0ff" },
+    { "key": "cultura", "label": "Cultura i llengua", "amount": 545, "color": "#ff9e3d" },
+    { "key": "justicia", "label": "Justícia", "amount": 705, "color": "#b6ff9a" },
+    { "key": "interessos_deute", "label": "Interessos del deute", "amount": 1490, "color": "#9aa0a6" },
+    { "key": "altres", "label": "Altres (govern, admin, etc.)", "amount": 8710, "color": "#d4d4d4" }
+  ]
+}

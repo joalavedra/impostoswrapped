@@ -1,0 +1,60 @@
+{
+  "note": "Top-5 partides específiques amb què es munten els category screens. Els valors són la despesa total estimada de la Generalitat 2025; el càlcul per-usuari es fa com (amount_total / budget_total) * tax_usuari.",
+  "categories": [
+    {
+      "key": "hospitals",
+      "label": "Hospitals públics",
+      "emoji": "🏥",
+      "department": "salut",
+      "amount": 9080,
+      "oneLiner": "ICS, hospitals concertats i primària",
+      "stat": "Amb la pasta que hi has posat es paguen {units} hores de consulta al CAP.",
+      "endEmojis": "🩺💊💉",
+      "unitCostEur": 42
+    },
+    {
+      "key": "escoles",
+      "label": "Escoles i instituts",
+      "emoji": "🎒",
+      "department": "educacio",
+      "amount": 6220,
+      "oneLiner": "Profes, menjador i manteniment",
+      "stat": "Has pagat {units} dies d'escola a un nen de primària.",
+      "endEmojis": "📚✏️🏫",
+      "unitCostEur": 29
+    },
+    {
+      "key": "pensions_dependencia",
+      "label": "Pensions i dependència",
+      "emoji": "👵",
+      "department": "drets_socials",
+      "amount": 3470,
+      "oneLiner": "Renda garantida, llei de dependència i residències",
+      "stat": "Equival a {units} dies de residència geriàtrica.",
+      "endEmojis": "👴🦯☕",
+      "unitCostEur": 67
+    },
+    {
+      "key": "mossos",
+      "label": "Mossos d'Esquadra",
+      "emoji": "🚓",
+      "department": "interior",
+      "amount": 1290,
+      "oneLiner": "Sou, patrulles i comissaries",
+      "stat": "Has pagat {units} minuts de patrulla de dos agents.",
+      "endEmojis": "👮‍♀️🚨🎯",
+      "unitCostEur": 0.72
+    },
+    {
+      "key": "transport",
+      "label": "Transport públic",
+      "emoji": "🚇",
+      "department": "territori",
+      "amount": 2180,
+      "oneLiner": "TMB, FGC i Rodalies (quan van)",
+      "stat": "Són {units} T-usuals mensuals, que no és poc.",
+      "endEmojis": "🚋🚆🎫",
+      "unitCostEur": 42.35
+    }
+  ]
+}

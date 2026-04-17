@@ -1,0 +1,16 @@
+{
+  "year": 2025,
+  "source": "Idescat + Generalitat 2025 (pròrroga amb actualitzacions)",
+  "population": 8012231,
+  "taxpayers": 3740000,
+  "medianGrossSalary": 28440,
+  "p25GrossSalary": 18250,
+  "p75GrossSalary": 41200,
+  "p90GrossSalary": 62000,
+  "p99GrossSalary": 138000,
+  "revenue": 40180,
+  "spending": 44520,
+  "deficit": 4340,
+  "deficitPerCapita": 542,
+  "debtOutstanding": 88900
+}
