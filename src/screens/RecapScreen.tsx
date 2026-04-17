@@ -106,7 +106,7 @@ export function RecapScreen() {
               }}
               className="flex-1 rounded-full border border-white/50 bg-white/10 text-white py-2 text-xs font-display font-bold active:scale-[0.98] transition"
             >
-              Refer
+              Tornar a fer
             </button>
             <button
               type="button"
@@ -123,12 +123,14 @@ export function RecapScreen() {
             headline="Estalvia amb Canigo"
             subcopy="Estalvia al 3% i no miris la nòmina"
             cta="Estalvia"
+            url="https://getcanigo.com"
             tone="lime"
           />
           <SponsorCta
             headline="Invierteix amb Farao"
             subcopy="Fes créixer el que et queda"
             cta="Invierteix"
+            url="https://getfarao.com"
             tone="plum"
           />
         </div>
@@ -151,10 +153,11 @@ interface CtaProps {
   headline: string
   subcopy: string
   cta: string
+  url: string
   tone: 'lime' | 'plum'
 }
 
-function SponsorCta({ headline, subcopy, cta, tone }: CtaProps) {
+function SponsorCta({ headline, subcopy, cta, url, tone }: CtaProps) {
   const box =
     tone === 'lime'
       ? 'bg-wrap-lime text-black border-black/80'
@@ -171,7 +174,7 @@ function SponsorCta({ headline, subcopy, cta, tone }: CtaProps) {
       </div>
       <button
         type="button"
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => window.open(url, '_blank')}
         className={`mt-2 rounded-full py-1.5 text-xs font-display font-bold active:scale-[0.98] transition ${button}`}
       >
         {cta} →
