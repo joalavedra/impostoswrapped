@@ -10,6 +10,7 @@ export interface TaxInputs {
 export interface TaxBreakdown {
   grossAnnual: number
   socialSecurity: number
+  solidarity: number
   incomeTax: number
   totalTax: number
   netAnnual: number
@@ -62,7 +63,10 @@ export function computeTax(inputs: TaxInputs): TaxBreakdown {
   const socialSecurity =
     ssBase * (brackets.socialSecurityEmployeeRate + brackets.socialSecurityMIEIRate)
 
-  const netWork = gross - socialSecurity
+  const solidarityExcess = Math.max(0, gross - brackets.socialSecurityBaseMax)
+  const solidarity = applyBrackets(solidarityExcess, brackets.solidarity)
+
+  const netWork = gross - socialSecurity - solidarity
   const reduction = earningsReduction(netWork)
   const taxableBase = Math.max(0, netWork - reduction)
 
@@ -77,7 +81,7 @@ export function computeTax(inputs: TaxInputs): TaxBreakdown {
   const catTax = Math.max(0, catGross - catOnMin)
 
   const incomeTax = stateTax + catTax
-  const totalTax = socialSecurity + incomeTax
+  const totalTax = socialSecurity + solidarity + incomeTax
   const netAnnual = gross - totalTax
   const effectiveRate = gross > 0 ? totalTax / gross : 0
 
@@ -91,6 +95,7 @@ export function computeTax(inputs: TaxInputs): TaxBreakdown {
   return {
     grossAnnual: gross,
     socialSecurity,
+    solidarity,
     incomeTax,
     totalTax,
     netAnnual,
