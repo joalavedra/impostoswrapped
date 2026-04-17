@@ -10,7 +10,7 @@ export function InterestScreen() {
   const { breakdown } = useWrapped()
   if (!breakdown) return null
   const interestDept = budget.departments.find((d) => d.key === 'interessos_deute')!
-  const yours = categoryContribution(breakdown.incomeTax, interestDept.amount)
+  const yours = categoryContribution(breakdown.totalTax, interestDept.amount)
   const share = yours / breakdown.totalTax
 
   return (

@@ -22,9 +22,19 @@ export function ContributionScreen() {
           label="− Seguretat Social"
           value={<AnimatedNumber value={breakdown.socialSecurity} format={(n) => eur(n)} />}
         />
+        {breakdown.solidarity > 0 && (
+          <Row
+            label="− Contribució de Solidaritat"
+            value={<AnimatedNumber value={breakdown.solidarity} format={(n) => eur(n)} />}
+          />
+        )}
         <Row
-          label="− IRPF"
-          value={<AnimatedNumber value={breakdown.incomeTax} format={(n) => eur(n)} />}
+          label="− State Income Tax (IRPF estatal)"
+          value={<AnimatedNumber value={breakdown.stateTax} format={(n) => eur(n)} />}
+        />
+        <Row
+          label="− Tram autonòmic (regional)"
+          value={<AnimatedNumber value={breakdown.regionalTax} format={(n) => eur(n)} />}
         />
         <Row
           label="Net que et queda"

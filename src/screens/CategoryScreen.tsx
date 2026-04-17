@@ -29,7 +29,7 @@ export function CategoryScreen({ category, rank }: { category: Category; rank: n
   const { breakdown } = useWrapped()
   if (!breakdown) return null
 
-  const yours = categoryContribution(breakdown.incomeTax, category.amount)
+  const yours = categoryContribution(breakdown.totalTax, category.amount)
   const shareOfTotal = yours / breakdown.totalTax
   const units = yours / category.unitCostEur
   const funnyStat = category.stat.replace('{units}', num(units))

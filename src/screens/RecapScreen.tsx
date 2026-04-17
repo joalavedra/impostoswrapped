@@ -43,7 +43,7 @@ export function RecapScreen() {
   if (!breakdown) return null
 
   const top = spending.categories[0]
-  const topYours = categoryContribution(breakdown.incomeTax, top.amount)
+  const topYours = categoryContribution(breakdown.totalTax, top.amount)
   const comp = pickComparison(breakdown.totalTax)
 
   return (
